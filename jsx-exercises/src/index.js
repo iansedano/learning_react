@@ -1,17 +1,61 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+function MyThing() {
+  return (
+    <div className='book'>
+      <div className='title'>
+                     The Title
+      </div>
+      <div className='author'>
+        The Author
+
+      </div>
+      <ul className='stats'>
+        <li className='rating'>
+          5 stars
+
+        </li>
+        <li className='isbn'>
+          12-325478-910
+        </li>
+      </ul>
+    </div>
+  )
+
+}
+
+function t(){
+  return 10
+}
+
+function Greeting() {
+  let username = "undefined";
+  let greeting;
+  if (username === undefined) {
+    greeting = "you are no logged in pal"
+  } else {
+    greeting = `Hello ${username}!`
+  }
+  return (
+    <>
+    <h1>Hello!</h1>
+    <p>{t()}</p>
+    </>
+  )
+}
+
+function Main() {
+  return(
+    <>
+    <MyThing/>
+    <Greeting/>
+    </>
+  )
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <Main/>,
+  document.querySelector('#root')
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
