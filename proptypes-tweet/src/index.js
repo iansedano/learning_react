@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import './index.css';
 
@@ -8,6 +9,10 @@ const Time = ({ time }) => {
     return (
         <span className="time">{timeString}</span>
     );
+}
+
+Time.propTypes = {
+    text: PropTypes.string
 }
 
 const ReplyButton = () => (
@@ -34,6 +39,10 @@ const RetweetButton = ({ count }) => (
     </span>
 );
 
+RetweetButton.propTypes = {
+    count: PropTypes.number
+}
+
 const LikeButton = ({ count }) => (
     <span className="like-button">
         <i className="fa fa-heart"/>
@@ -43,6 +52,11 @@ const LikeButton = ({ count }) => (
             </span>}
     </span>
 );
+
+LikeButton.propTypes = {
+    count: PropTypes.number
+}
+
 const MoreOptionsButton = () => (
     <i className="fa fa-ellipsis-h more-options-button"/>
 );
@@ -65,6 +79,10 @@ function Message({ text }) {
     );
 }
 
+Message.propTypes = {
+    text: PropTypes.string
+}
+
 function Author({ author }) {
     const { name, handle } = author;
     return (
@@ -73,6 +91,13 @@ function Author({ author }) {
             <span className="handle">@{handle}</span>
         </span>
     );
+}
+
+Author.propTypes = {
+    author : PropTypes.shape({
+        name: PropTypes.string,
+        handle: PropTypes.string
+    })
 }
 
 function Tweet({ tweet }) {
