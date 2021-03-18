@@ -71,6 +71,10 @@ function Avatar({ hash }) {
     );
 }
 
+Avatar.propTypes = {
+    hash: PropTypes.string
+}
+
 function Message({ text }) {
     return (
         <div className="message">
@@ -117,6 +121,20 @@ function Tweet({ tweet }) {
             </div>
         </div>
     );
+}
+
+Tweet.propTypes = {
+    tweet: PropTypes.shape({
+        message: PropTypes.string,
+        gravatar: PropTypes.string,
+        author: PropTypes.shape({
+            handle: PropTypes.string,
+            name: PropTypes.string
+        }),
+        likes: PropTypes.number,
+        retweets: PropTypes.number,
+        timestamp: PropTypes.string
+    })
 }
 
 
