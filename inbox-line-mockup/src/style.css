@@ -1,0 +1,46 @@
+.mail-line {
+    border-style: solid;
+    border-width: 1px;
+    height: 40px;
+    background-color: rgb(211, 206, 206);
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+}
+
+.e {
+    font-size: 22px;
+    margin-left: 5px;
+}
+
+.star {
+
+}
+
+.pri-marker {
+
+}
+
+.sender {
+    color:blue;
+}
+
+.subject {
+    font-weight: 900;
+}
+
+.snippet {
+    max-width: 450px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.date {
+    margin-left: auto;
+    margin-right:10px;
+}
